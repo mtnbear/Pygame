@@ -14,3 +14,16 @@
        
        def moveDown(self):
         self.y = self.y + self.speed
+       
+       
+     class App:
+      
+      windowWidth = 800
+      windowHeight = 600
+      player = 0
+      
+      def __init__(self):
+       self.running = true
+       self.display_surf = true
+       self.image_surf = true
+       self.play = Player()
