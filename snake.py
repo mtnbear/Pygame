@@ -27,3 +27,7 @@
        self.display_surf = true
        self.image_surf = true
        self.play = Player()
+       
+       def on_init(self):
+        pygame.init()
+        self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowheight
