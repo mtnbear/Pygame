@@ -75,16 +75,22 @@ if __name__ == "__main__" :
                      theApp = App()
                      theApp.on_execute()
                      
-                     
-                 
-      class Player:
-            x = 10
-            y = 10         
-                  
-                  
-                     
+       
+ class Player:
+      x = 10
+      y = 10
+      speed = 32                
+      direction = 0               
          
-                
+      def update(self):
+          if self.direction == 0:
+                     self.x = self.x + self.speed
+          if self.direction == 1:
+                     self.x = self.x - self.speed
+          if self.direction == 2:
+                     self.y = self.y - self.speed
+          if self.direction == 3:
+                     self.y = self.y + self.speed
            
                                                       
                                                       
