@@ -1,3 +1,6 @@
+ from.pygamelocals import*
+ import time
+ 
  class Player:
       x = 10
       y = 10
@@ -80,9 +83,10 @@
                  
                  if (key[K_ECSCAPE]:
                      self._running = false 
-                     
                      self.on_loop()
                      self.on_render()
+                     
+                     time.sleep (50.0 / 1000.0);
                    self.on_cleanup()
 if __name__ == "__main__" :
                      theApp = App()
