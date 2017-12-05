@@ -67,6 +67,14 @@
                  
                  if (key[K_ECSCAPE]:
                      self._running = false 
+                     
+                     self.on_loop()
+                     self.on_render()
+                   self.on_cleanup()
+if __name__ == "__main__" :
+                     theApp = App()
+                     theApp.on_execute()
+                 
                   
                      
                 
