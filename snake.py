@@ -1,19 +1,32 @@
  class Player:
-    x = 10
-    y = 10 
-    speed = 1
-    
-    def  moveRight(self):
-     self.x = self.x + self.speed
-     
-     def moveLeft(self):
-      self.x = self.x - self.speed
-      
-      def moveUp(self):
-       self.y = self.y - self.speed
-       
-       def moveDown(self):
-        self.y = self.y + self.speed
+      x = 10
+      y = 10
+      speed = 32                
+      direction = 0               
+         
+      def update(self):
+          if self.direction == 0:
+                     self.x = self.x + self.speed
+          if self.direction == 1:
+                     self.x = self.x - self.speed
+          if self.direction == 2:
+                     self.y = self.y - self.speed
+          if self.direction == 3:
+                     self.y = self.y + self.speed
+           
+                                                      
+          def moveRight(self):
+                     self.direction = 0
+          
+          def moveLeft(self):
+                     self.direction = 1
+                     
+          def moveUp(self):
+                     self.direction = 2
+                     
+          def moveDown(self):
+                     self.direction = 3
+  
        
        
      class App:
@@ -76,22 +89,3 @@ if __name__ == "__main__" :
                      theApp.on_execute()
                      
        
- class Player:
-      x = 10
-      y = 10
-      speed = 32                
-      direction = 0               
-         
-      def update(self):
-          if self.direction == 0:
-                     self.x = self.x + self.speed
-          if self.direction == 1:
-                     self.x = self.x - self.speed
-          if self.direction == 2:
-                     self.y = self.y - self.speed
-          if self.direction == 3:
-                     self.y = self.y + self.speed
-           
-                                                      
-                                                      
-                                               
