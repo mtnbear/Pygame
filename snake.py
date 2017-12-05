@@ -74,10 +74,15 @@
 if __name__ == "__main__" :
                      theApp = App()
                      theApp.on_execute()
+                     
+                     
                  
+      class Player:
+            x = 10
+            y = 10         
+                  
                   
                      
-                
          
                 
            
