@@ -15,9 +15,10 @@
  
  
  
- class Player:
-    x = []
-    y = []
+
+class Player:
+    x = [0]
+    y = [0]
     step = 44
     direction = 0
     length = 3
@@ -27,18 +28,21 @@
  
     def __init__(self, length):
        self.length = length
-       for i in range(0,length):
-           self.x.append(0)
-           self.y.append(0)
+       for i in range(0,2000):
+           self.x.append(-100)
+           self.y.append(-100)
+ 
+       # initial positions, no collision.
+       self.x[1] = 1*44
+       self.x[2] = 2*44
  
     def update(self):
  
         self.updateCount = self.updateCount + 1
-        if self.updateCount &gt; self.updateCountMax:
+        if self.updateCount > self.updateCountMax:
  
             # update previous positions
             for i in range(self.length-1,0,-1):
-                print "self.x[" + str(i) + "] = self.x[" + str(i-1) + "]"
                 self.x[i] = self.x[i-1]
                 self.y[i] = self.y[i-1]
  
