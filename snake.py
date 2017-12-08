@@ -1,4 +1,5 @@
- from.pygamelocals import*
+import pygame, sys 
+from.pygamelocals import*
  import time
  
  class Apple:
@@ -103,7 +104,7 @@ class Player:
         pygame.init()
         self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowHeight), pygame.HWSURFACE)
  
-        pygame.display.set_caption('Pygame pythonspot.com example')
+        pygame.display.set_caption('Snake pygame')
         self._running = True
         self._image_surf = pygame.image.load("block.jpg").convert()
         self._apple_surf = pygame.image.load("block.jpg").convert()
