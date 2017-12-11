@@ -14,10 +14,7 @@ from.pygamelocals import*
     def draw(self, surface, image):
         surface.blit(image,(self.x, self.y))
  
- 
- 
-
-class Player:
+ class Player:
     x = [0]
     y = [0]
     step = 44
