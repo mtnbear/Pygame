@@ -1,8 +1,9 @@
-import pygame, sys 
-from.pygamelocals import*
- import time
+from pygame.locals import *
+from random import randint
+import pygame
+import time
  
- class Apple:
+class Apple:
     x = 0
     y = 0
     step = 44
@@ -12,9 +13,10 @@ from.pygamelocals import*
         self.y = y * self.step
  
     def draw(self, surface, image):
-        surface.blit(image,(self.x, self.y))
+        surface.blit(image,(self.x, self.y)) 
  
- class Player:
+ 
+class Player:
     x = [0]
     y = [0]
     step = 44
@@ -72,16 +74,15 @@ from.pygamelocals import*
     def draw(self, surface, image):
         for i in range(0,self.length):
             surface.blit(image,(self.x[i],self.y[i])) 
-  
-    class Game:
-    
+ 
+class Game:
     def isCollision(self,x1,y1,x2,y2,bsize):
         if x1 >= x2 and x1 <= x2 + bsize:
             if y1 >= y2 and y1 <= y2 + bsize:
                 return True
-        return False   
-       
-     class App:
+        return False
+ 
+class App:
  
     windowWidth = 800
     windowHeight = 600
@@ -101,10 +102,10 @@ from.pygamelocals import*
         pygame.init()
         self._display_surf = pygame.display.set_mode((self.windowWidth,self.windowHeight), pygame.HWSURFACE)
  
-        pygame.display.set_caption('Snake pygame')
+        pygame.display.set_caption('Python snake')
         self._running = True
-        self._image_surf = pygame.image.load("block.jpg").convert()
-        self._apple_surf = pygame.image.load("block.jpg").convert()
+        self._image_surf = pygame.image.load("snakeblock.jpg").convert()
+        self._apple_surf = pygame.image.load("apple_310591.jpg").convert()
  
     def on_event(self, event):
         if event.type == QUIT:
@@ -113,7 +114,7 @@ from.pygamelocals import*
     def on_loop(self):
         self.player.update()
  
-      
+        # does snake eat apple?
         for i in range(0,self.player.length):
             if self.game.isCollision(self.apple.x,self.apple.y,self.player.x[i], self.player.y[i],44):
                 self.apple.x = randint(2,9) * 44
@@ -121,7 +122,7 @@ from.pygamelocals import*
                 self.player.length = self.player.length + 1
  
  
-
+        # does snake collide with itself?
         for i in range(2,self.player.length):
             if self.game.isCollision(self.player.x[0],self.player.y[0],self.player.x[i], self.player.y[i],40):
                 print("You lose! Collision: ")
@@ -172,3 +173,7 @@ from.pygamelocals import*
 if __name__ == "__main__" :
     theApp = App()
     theApp.on_execute()
+
+
+    
+         
