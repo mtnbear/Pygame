@@ -14,7 +14,18 @@ class Apple:
  
     def draw(self, surface, image):
         surface.blit(image,(self.x, self.y)) 
+    
+class greenapple:
+    x = 0
+    y = 0
+    step = 44
  
+    def __init__(self,x,y):
+        self.x = x * self.step
+        self.y = y * self.step
+ 
+    def draw(self, surface, image):
+        surface.blit(image,(self.x, self.y))  
  
 class Player:
     x = [0]
@@ -106,6 +117,7 @@ class App:
         self._running = True
         self._image_surf = pygame.image.load("snakeblock.jpg").convert()
         self._apple_surf = pygame.image.load("apple_310591.jpg").convert()
+        self._apple_surf = pygame.image.load("").convert()    
  
     def on_event(self, event):
         if event.type == QUIT:
@@ -120,6 +132,11 @@ class App:
                 self.apple.x = randint(2,9) * 44
                 self.apple.y = randint(2,9) * 44
                 self.player.length = self.player.length + 1
+         
+         if self.game.isCollision(self.greenapple.x,self.greenapple.y,self.player.x[i], self.player.y[i],44):
+                self.greenapple.x = randint(2,9) * 44
+                self.greenapple.y = randint(2,9) * 44
+                self.player.length = self.player.length + 5
  
  
         # does snake collide with itself?
